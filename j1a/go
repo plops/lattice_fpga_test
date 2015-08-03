@@ -1,0 +1,6 @@
+set -e
+PORT=/dev/ttyUSB3
+
+make -C icestorm
+iceprog icestorm/j1a.bin
+python shell.py -h $PORT -p ../common -p ../demos swapforth.fs
