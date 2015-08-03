@@ -62,3 +62,5 @@ programming..
 cdone: high
 Bye.
 ```
+
+Video of getting a J1a cpu on the Lattice FPGA: https://www.youtube.com/watch?v=rdLgLCIDSk0
