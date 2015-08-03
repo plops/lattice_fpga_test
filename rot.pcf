@@ -1,6 +1,6 @@
-set_io D1 99
-set_io D2 98
-set_io D3 97
-set_io D4 96
-set_io D5 95
-set_io clk 21
+set_io D1 B5
+set_io D2 B4
+set_io D3 A2
+set_io D4 A1
+set_io D5 C5
+set_io clk J3
