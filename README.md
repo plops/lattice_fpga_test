@@ -1,5 +1,4 @@
-![Photography of the running FPGA.](/pcb-photo.jpg?raw=true "FPGA with LEDs being controlled by the code of this repository")
-
+[![Photography of the running FPGA.](/pcb-photo.jpg?raw=true "FPGA with LEDs being controlled by the code of this repository")](http://youtu.be/rE7uVGErM0Y)
 
 This is how I installed the toolchain on my Gentoo system:
 I wanted to make sure libftdi doesn't pull in boost.
