@@ -6,19 +6,19 @@ set_io D5 C5
 set_io TXD B12
 set_io RXD B10
 set_io clk J3
-set_io resetq 43
+set_io resetq A16
 set_io PIOS_00 R11 # sck flash
 set_io PIOS_01 P11 # si flash
 set_io PIOS_02 P12 # so flash
 set_io PIOS_03 R12 # ss flash
-set_io PIO1_18 105 # tx TFDU4101 IrDA
-set_io PIO1_19 106 # rx irda
-set_io PIO1_20 107 # sd irda
-set_io PIO1_02 78
-set_io PIO1_03 79
-set_io PIO1_04 80
-set_io PIO1_05 81
-set_io PIO1_06 87
-set_io PIO1_07 88
-set_io PIO1_08 90
-set_io PIO1_09 91
+#set_io PIO1_18 105 # tx TFDU4101 IrDA
+#set_io PIO1_19 106 # rx irda
+#set_io PIO1_20 107 # sd irda
+# set_io PIO1_02 78  # digilent pmod compatible
+# set_io PIO1_03 79
+# set_io PIO1_04 80
+# set_io PIO1_05 81
+# set_io PIO1_06 87
+# set_io PIO1_07 88
+# set_io PIO1_08 90
+# set_io PIO1_09 91

@@ -72,18 +72,18 @@ module top(input clk, output D1, output D2, output D3, output D4, output D5,
            output PIOS_02,    // flash MOSI
            output PIOS_03,    // flash CS
 
-           output PIO1_02,    // PMOD 1
-           output PIO1_03,    // PMOD 1
-           output PIO1_04,    // PMOD 1
-           output PIO1_05,    // PMOD 1
-           output PIO1_06,    // PMOD 1
-           output PIO1_07,    // PMOD 1
-           output PIO1_08,    // PMOD 1
-           output PIO1_09,    // PMOD 1
+           // output PIO1_02,    // PMOD 1
+           // output PIO1_03,    // PMOD 1
+           // output PIO1_04,    // PMOD 1
+           // output PIO1_05,    // PMOD 1
+           // output PIO1_06,    // PMOD 1
+           // output PIO1_07,    // PMOD 1
+           // output PIO1_08,    // PMOD 1
+           // output PIO1_09,    // PMOD 1
 
-           output PIO1_18,    // IR TXD
-           input  PIO1_19,    // IR RXD
-           output PIO1_20,    // IR SD
+           // output PIO1_18,    // IR TXD
+           // input  PIO1_19,    // IR RXD
+           // output PIO1_20,    // IR SD
 
            input resetq,
 );
@@ -136,8 +136,8 @@ module top(input clk, output D1, output D2, output D3, output D4, output D5,
 
   // ######   PMOD   ##########################################
 
-  reg [7:0] pmod_dir;   // 1:output, 0:input
-  assign {PIO1_09, PIO1_08, PIO1_07, PIO1_06, PIO1_05, PIO1_04, PIO1_03, PIO1_02} = pmod_dir;
+  // reg [7:0] pmod_dir;   // 1:output, 0:input
+  // assign {PIO1_09, PIO1_08, PIO1_07, PIO1_06, PIO1_05, PIO1_04, PIO1_03, PIO1_02} = pmod_dir;
 
   // ######   UART   ##########################################
 
@@ -160,8 +160,8 @@ module top(input clk, output D1, output D2, output D3, output D4, output D5,
      .tx_data(dout_[7:0]),
      .rx_data(uart0_data));
 
-  reg [4:0] PIOS;
-  assign {PIO1_20, PIO1_18, PIOS_00, PIOS_02, PIOS_03} = PIOS;
+  reg [2:0] PIOS;
+  assign {/*PIO1_20, PIO1_18, */PIOS_00, PIOS_02, PIOS_03} = PIOS;
   reg [4:0] LEDS;
   assign {D1,D2,D3,D4,D5} = LEDS;
 
@@ -177,13 +177,13 @@ module top(input clk, output D1, output D2, output D3, output D4, output D5,
   */
 
   assign io_din =
-    (io_addr_[ 1] ? {8'd0, pmod_dir}                                    : 16'd0) |
+//    (io_addr_[ 1] ? {8'd0, pmod_dir}                                    : 16'd0) |
     (io_addr_[12] ? {8'd0, uart0_data}                                  : 16'd0) |
-    (io_addr_[13] ? {12'd0, PIO1_19, PIOS_01, uart0_valid, !uart0_busy} : 16'd0);
+    (io_addr_[13] ? {12'd0, /* PIO1_19,*/ PIOS_01, uart0_valid, !uart0_busy} : 16'd0);
 
   always @(posedge clk) begin
-    if (io_wr_ & io_addr_[1])
-      pmod_dir <= dout_[7:0];
+    // if (io_wr_ & io_addr_[1])
+    //   pmod_dir <= dout_[7:0];
     if (io_wr_ & io_addr_[2])
       LEDS <= dout_[4:0];
     if (io_wr_ & io_addr_[3])
