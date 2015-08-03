@@ -1,3 +1,5 @@
+# Basic LED example
+
 [![Photography of the running FPGA.](/pcb-photo.jpg?raw=true "FPGA with LEDs being controlled by the code of this repository")](http://youtu.be/rE7uVGErM0Y)
 
 This is how I installed the toolchain on my Gentoo system:
@@ -63,6 +65,12 @@ cdone: high
 Bye.
 ```
 
+# J1a CPU
+
 Video of getting a J1a cpu on the Lattice FPGA: https://www.youtube.com/watch?v=rdLgLCIDSk0
 
-The github link: https://github.com/jamesbowman/swapforth/tree/master/j1a
+
+```
+emerge gforth
+git clone --depth=1 https://github.com/jamesbowman/swapforth
+```
