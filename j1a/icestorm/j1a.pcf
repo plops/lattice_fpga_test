@@ -7,13 +7,13 @@ set_io TXD B12
 set_io RXD B10
 set_io clk J3
 set_io resetq 43
-set_io PIOS_00 70 # sck
-set_io PIOS_01 68 # si
-set_io PIOS_02 67 # so
-set_io PIOS_03 71 # ss
-set_io PIO1_18 105
-set_io PIO1_19 106
-set_io PIO1_20 107
+set_io PIOS_00 R11 # sck flash
+set_io PIOS_01 P11 # si flash
+set_io PIOS_02 P12 # so flash
+set_io PIOS_03 R12 # ss flash
+set_io PIO1_18 105 # tx TFDU4101 IrDA
+set_io PIO1_19 106 # rx irda
+set_io PIO1_20 107 # sd irda
 set_io PIO1_02 78
 set_io PIO1_03 79
 set_io PIO1_04 80
